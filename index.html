@@ -1,91 +1,584 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>PPRO installer slideshow</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="سوقك للخدمات الرقمية - Sougk Dijital Hizmetler">
+<title>سوقك للخدمات الرقمية | Sougk Dijital Hizmetler</title>
+
 <style>
-html {
-		background-color: #fff;
+:root {
+  --primary: #087d99;
+  --dark: #173341;
+  --gray: #687984;
+  --light: #f5f8fa;
+  --border: #e1e9ed;
 }
-* {box-sizing: border-box;}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-	margin:0px;}
-.mySlides {opacity: 0; position: absolute; transition: all 1s;}
-img {vertical-align: middle;}
+  margin: 0;
+  background: var(--light);
+  color: var(--dark);
+  font-family: Tahoma, Arial, sans-serif;
+  line-height: 1.9;
+}
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 445px;
-  position: relative;
+.container {
+  width: 92%;
+  max-width: 920px;
   margin: auto;
-  cursor: pointer;
 }
 
-/* Caption text */
-.text {
-  font-family: 'AdobeClean', Helvetica, Arial, sans-serif;
-  color: #fff;
-  font-weight: 450;
-  font-size: 15px;
-  letter-spacing: .3;
-  padding-left: 20px;
-  position: absolute;
-  bottom: 95px;
-  width: 30%;
+header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 17px 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.logo {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 25px;
+}
+
+.logo small {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  color: var(--gray);
+  line-height: 1.4;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 13px;
+}
+
+.hero {
   text-align: center;
+  background: white;
+  padding: 65px 20px 55px;
+  border-bottom: 1px solid var(--border);
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-	font-family: 'AdobeClean', Helvetica, Arial, sans-serif;
-  color: #f2f2f2;
+.hero .company-ar {
+  font-size: clamp(30px, 6vw, 46px);
+  font-weight: bold;
+  margin: 0;
+  color: var(--dark);
+}
+
+.hero .company-tr {
+  font-size: clamp(18px, 4vw, 25px);
+  font-weight: 600;
+  color: var(--primary);
+  direction: ltr;
+  margin-top: 6px;
+}
+
+.hero .company-en {
+  font-size: 15px;
+  color: var(--gray);
+  direction: ltr;
+  margin-top: 4px;
+}
+
+.hero p {
+  color: var(--gray);
+  font-size: 15px;
+  max-width: 570px;
+  margin: 25px auto 0;
+}
+
+.name-strip {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.name-strip span {
+  background: #eef7fa;
+  color: #176b84;
+  padding: 6px 17px;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+main {
+  padding: 35px 0;
+}
+
+.section {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.section h2 {
+  font-size: 19px;
+  padding: 16px 20px;
+  margin: 0;
+  background: #f0f9fc;
+  border-right: 4px solid var(--primary);
+}
+
+.section-content {
+  padding: 10px 22px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.info-value a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.company-names {
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.company-names .ar {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.company-names .tr {
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--primary);
+  direction: ltr;
+  margin-top: 8px;
+}
+
+.company-names .short {
+  color: var(--gray);
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.description {
+  padding: 0 22px 20px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--gray);
+}
+
+.status {
+  color: #16774b;
+}
+
+.contact {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 38px 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.contact h2 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.contact p {
+  font-size: 14px;
+}
+
+.contact a {
+  display: inline-block;
+  margin: 7px;
+  background: white;
+  color: var(--primary);
+  padding: 10px 21px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.note {
   font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+  text-align: center;
+  color: var(--gray);
+  margin-bottom: 25px;
 }
 
-.active {
-  background-color: #717171;
+footer {
+  background: white;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 30px 15px;
 }
 
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1s;
-  animation-name: fade;
-  animation-duration: 1s;
+footer .arabic {
+  font-size: 22px;
+  font-weight: bold;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .7}
-  to {opacity: 1}
+footer .turkish {
+  color: var(--primary);
+  direction: ltr;
+  font-weight: 600;
 }
 
-@keyframes fade {
-  from {opacity: .1}
-  to {opacity: 1}
+footer .copyright {
+  color: var(--gray);
+  font-size: 12px;
+  margin-top: 15px;
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
+@media(max-width: 600px) {
+  .hero {
+    padding: 48px 15px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .info-value {
+    text-align: right;
+  }
+
+  .section-content {
+    padding: 10px 16px;
+  }
+
+  .contact a {
+    display: block;
+    max-width: 280px;
+    margin: 10px auto;
+  }
 }
 </style>
 </head>
+
 <body>
-<div class="slideshow-container" id="slideContainer" href="#">
 
-<div class="mySlides fade" style="opacity: 1; visibility: visible;">
-    <video class="videos" autoplay loop muted style="width: 445px; height: 239px;"><source src="images/01_creativity_for_all_445x239.mp4" style="width: 445px; height: 239px;"></video>
-    <div class="text" id="slideText1">Creativity for all.</div>
-</div>
+<header>
+  <div class="container header-content">
+    <div class="logo">
+      سوقك
+      <small>Sougk Dijital Hizmetler</small>
+    </div>
 
-</div>
+    <a href="#contact">تواصل معنا</a>
+  </div>
+</header>
 
-<script type="text/javascript" src="lib/jquery.min.js"></script>
-<script type="text/javascript" src="carousel.js"></script>
+<section class="hero">
+  <h1 class="company-ar">
+    سوقك للخدمات الرقمية
+  </h1>
+
+  <div class="company-tr">
+    Sougk Dijital Hizmetler
+  </div>
+
+  <div class="company-en">
+    Sougk Digital Services
+  </div>
+
+  <p>
+    خدمات التسويق والترويج الرقمي عبر
+    المواقع الإلكترونية ووسائل التواصل الاجتماعي.
+  </p>
+
+  <div class="name-strip">
+    <span>سوقك</span>
+    <span>Sougk</span>
+    <span>الخدمات الرقمية</span>
+    <span>Dijital Hizmetler</span>
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- Company names -->
+
+  <section class="section">
+    <h2>اسم الشركة | Company Name</h2>
+
+    <div class="company-names">
+      <div class="ar">
+        سوقك للخدمات الرقمية
+      </div>
+
+      <div class="tr">
+        Sougk Dijital Hizmetler
+      </div>
+
+      <div class="short">
+        سوقك | Sougk
+      </div>
+    </div>
+
+    <div class="description">
+      خدمات التسويق والترويج على المواقع
+      الإلكترونية ووسائل التواصل الاجتماعي.
+    </div>
+  </section>
+
+  <!-- Registration information -->
+
+  <section class="section">
+    <h2>معلومات السجل التجاري</h2>
+
+    <div class="section-content">
+
+      <div class="info-row">
+        <span class="info-label">اسم السجل</span>
+        <span class="info-value">
+          Sougk Dijital Hizmetler
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">الاسم بالعربية</span>
+        <span class="info-value">
+          سوقك للخدمات الرقمية
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">رقم السجل</span>
+        <span class="info-value">1838333</span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">الشكل القانوني</span>
+        <span class="info-value">
+          من الشركات الكبرى
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">حالة السجل في المستند</span>
+        <span class="info-value status">
+          نشط - Active
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">تاريخ التسجيل</span>
+        <span class="info-value">
+          2022/10/20
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">استثمار أجنبي</span>
+        <span class="info-value">
+          نعم - Yes
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">انتهاء السجل</span>
+        <span class="info-value">
+          11/10/2028
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- License information -->
+
+  <section class="section">
+    <h2>معلومات النشاط والترخيص</h2>
+
+    <div class="section-content">
+
+      <div class="info-row">
+        <span class="info-label">رقم الترخيص</span>
+        <span class="info-value">
+          L2777833
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">تعريف الترخيص</span>
+        <span class="info-value">
+          LD-1693
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">النشاط</span>
+        <span class="info-value">
+          خدمات الترويج والتسويق الإلكتروني
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">الإصدار الأول</span>
+        <span class="info-value">
+          25/06/2024
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">تاريخ الإصدار</span>
+        <span class="info-value">
+          2022/10/20
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">انتهاء الترخيص</span>
+        <span class="info-value">
+          11/12/2028
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact information -->
+
+  <section class="section">
+    <h2>بيانات التواصل</h2>
+
+    <div class="section-content">
+
+      <div class="info-row">
+        <span class="info-label">رقم الهاتف</span>
+        <span class="info-value">
+          <a href="tel:+966572194194">
+            +966572194194
+          </a>
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">البريد الإلكتروني</span>
+        <span class="info-value">
+          <a href="mailto:Otp@sd7v.github.io">
+            Otp@sd7v.github.io
+          </a>
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">الموقع الإلكتروني</span>
+        <span class="info-value">
+          <a href="https://sd7v.github.io"
+             target="_blank"
+             rel="noopener noreferrer">
+            sd7v.github.io
+          </a>
+        </span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">العنوان</span>
+        <span class="info-value">
+          طريق الملك فهد، شارع العليا،
+          الرياض، 12831،
+          المملكة العربية السعودية
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact section -->
+
+  <section class="contact" id="contact">
+    <h2>تواصل مع سوقك</h2>
+
+    <div dir="ltr">
+      Sougk Dijital Hizmetler
+    </div>
+
+    <p>
+      للاستفسارات والتواصل بشأن الخدمات الرقمية
+    </p>
+
+    <a href="tel:+966572194194">
+      اتصال هاتفي
+    </a>
+
+    <a href="mailto:Otp@sd7v.github.io">
+      البريد الإلكتروني
+    </a>
+
+    <a href="https://wa.me/966572194194"
+       target="_blank"
+       rel="noopener noreferrer">
+      التواصل عبر واتساب
+    </a>
+  </section>
+
+  <div class="note">
+    البيانات معروضة وفق المستند المرفق.
+    هذه صفحة تعريفية وليست شهادة حكومية
+    أو إثباتًا رسميًا لصحة التسجيل أو الترخيص.
+  </div>
+
+</main>
+
+<footer>
+  <div class="arabic">
+    سوقك للخدمات الرقمية
+  </div>
+
+  <div class="turkish">
+    Sougk Dijital Hizmetler
+  </div>
+
+  <div class="copyright">
+    Sougk Digital Services
+    <br>
+    © 2026 Sougk
+    <br>
+    sd7v.github.io
+  </div>
+</footer>
+
 </body>
 </html>
